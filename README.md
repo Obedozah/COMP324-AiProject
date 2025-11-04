@@ -17,16 +17,6 @@ This project implements a machine learning-based IDS using the *NSL-KDD dataset*
 
 **Inference**: Predict new flows from CSV/ARFF input using the trained model<br>
 
-# Project Structure
-
-```
-preprocess_data.py #Loading, cleaning, encoding, scaling
-```
-```train_model.py #Train classifiers, evaluate, save trained models
-```
-run_inference.py #Loads testing models, predicting/outputs results
-```
-
 # Installing / Environment Setup
 
 **1. Clone the repository:**
