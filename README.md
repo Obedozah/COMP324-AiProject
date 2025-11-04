@@ -1,6 +1,7 @@
 # ML-based Network Intrusion Detection System (IDS): Proof of Concept
+<br>
 
-This project implements a machine learning-based IDS using the *NSL-KDD dataset*. The system classifies network flows as normal or malicious, demonstrating a proof-of-concept for detecting attacks like port scans, probes, and other intrusion types.
+This project implements a machine learning-based IDS using the *NSL-KDD dataset*. The system classifies network flows as normal or malicious, demonstrating a proof-of-concept for detecting attacks like port scans, probes, and other intrusion types.<br>
 
 # Features
 
@@ -14,13 +15,13 @@ This project implements a machine learning-based IDS using the *NSL-KDD dataset*
 
 **Trustworthy AI elements**: Feature importance inspection, basic fairness checks, robustness testing with optional lab flows
 
-**Inference**: Predict new flows from CSV/ARFF input using the trained model
+**Inference**: Predict new flows from CSV/ARFF input using the trained model<br>
 
 # Project Structure
 
-`preprocess_data.py #Loading, cleaning, encoding, scaling`
-`train_model.py #Train classifiers, evaluate, save trained models`
-`run_inference.py #Loads testing models, predicting/outputs results` 
+`preprocess_data.py #Loading, cleaning, encoding, scaling`<br>
+`train_model.py #Train classifiers, evaluate, save trained models`<br>
+`run_inference.py #Loads testing models, predicting/outputs results`<br>
 
 # Installing / Environment Setup
 
