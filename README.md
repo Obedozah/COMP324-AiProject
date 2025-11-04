@@ -1,1 +1,48 @@
-# COMP324-AiProject
+# ML-based Network Intrusion Detection System (IDS): Proof of Concept
+
+This project implements a machine learning-based IDS using the *NSL-KDD dataset*. The system classifies network flows as normal or malicious, demonstrating a proof-of-concept for detecting attacks like port scans, probes, and other intrusion types.
+
+# Features
+
+**Dataset**: NSL-KDD (train [20%]/test split, ARFF format)
+
+**Preprocessing**: Encoding categorical features, scaling numeric features, handling missing values
+
+**ML Model**: Random Forest Classifier
+
+**Evaluation**: Accuracy, Precision, Recall, F1-score, Confusion Matrix
+
+**Trustworthy AI elements**: Feature importance inspection, basic fairness checks, robustness testing with optional lab flows
+
+**Inference**: Predict new flows from CSV/ARFF input using the trained model
+
+# Project Structure
+
+`preprocess_data.py #Loading, cleaning, encoding, scaling`
+`train_model.py #Train classifiers, evaluate, save trained models`
+`run_inference.py #Loads testing models, predicting/outputs results` 
+
+# Installing / Environment Setup
+
+1. Clone the repository:
+```
+git clone <your-repo-url>
+cd <repo-folder>
+```
+
+2. Create a virtual environment:
+`python -m venv sklearn-env`
+
+3. Activate the virtual environment:
+
+Linux / Mac:
+`source sklearn-env/bin/activate`
+
+Windows (PowerShell):
+`sklearn-env\Scripts\Activate.ps1`
+
+4. Install required packages:
+`pip install -r requirements.txt`
+
+5. Verify installation (optional):
+`pip list`
