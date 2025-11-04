@@ -25,35 +25,35 @@ This project implements a machine learning-based IDS using the *NSL-KDD dataset*
 
 # Installing / Environment Setup
 
-1. Clone the repository:
+**1. Clone the repository:**
 ```
 git clone <your-repo-url>
 cd <repo-folder>
 ```
 
-2. Create a virtual environment:
+**2. Create a virtual environment**:
 ```
 python -m venv sklearn-env
 ```
 
-3. Activate the virtual environment:
+**3. Activate the virtual environment**:
 
-Linux / Mac:
-```
+&nbsp;&nbsp;Linux / Mac:
+&nbsp;&nbsp;```
 source sklearn-env/bin/activate
-```
+&nbsp;&nbsp;```
 
-Windows (PowerShell):
-```
+&nbsp;&nbsp;Windows (PowerShell):
+&nbsp;&nbsp;```
 sklearn-env\Scripts\Activate.ps1
-```
+&nbsp;&nbsp;```
 
-4. Install required packages:
+**4. Install required packages**:
 ```
 pip install -r requirements.txt
 ```
 
-5. Verify installation (optional):
+**5. Verify installation (optional)**:
 ```
 pip list
 ```
