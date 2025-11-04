@@ -21,10 +21,10 @@ This project implements a machine learning-based IDS using the *NSL-KDD dataset*
 
 ```
 preprocess_data.py #Loading, cleaning, encoding, scaling
-```<br>
+```
 ```train_model.py #Train classifiers, evaluate, save trained models
-```<br>
-`run_inference.py #Loads testing models, predicting/outputs results
+```
+run_inference.py #Loads testing models, predicting/outputs results
 ```
 
 # Installing / Environment Setup
