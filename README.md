@@ -19,9 +19,9 @@ This project implements a machine learning-based IDS using the *NSL-KDD dataset*
 
 # Project Structure
 
-`preprocess_data.py #Loading, cleaning, encoding, scaling`<br>
-`train_model.py #Train classifiers, evaluate, save trained models`<br>
-`run_inference.py #Loads testing models, predicting/outputs results`<br>
+`preprocess_data.py #Loading, cleaning, encoding, scaling`\ 
+`train_model.py #Train classifiers, evaluate, save trained models`\ 
+`run_inference.py #Loads testing models, predicting/outputs results`
 
 # Installing / Environment Setup
 
@@ -32,18 +32,28 @@ cd <repo-folder>
 ```
 
 2. Create a virtual environment:
-`python -m venv sklearn-env`
+```
+python -m venv sklearn-env
+```
 
 3. Activate the virtual environment:
 
 Linux / Mac:
-`source sklearn-env/bin/activate`
+```
+source sklearn-env/bin/activate
+```
 
 Windows (PowerShell):
-`sklearn-env\Scripts\Activate.ps1`
+```
+sklearn-env\Scripts\Activate.ps1
+```
 
 4. Install required packages:
-`pip install -r requirements.txt`
+```
+pip install -r requirements.txt
+```
 
 5. Verify installation (optional):
-`pip list`
+```
+pip list
+```
