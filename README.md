@@ -38,15 +38,15 @@ python -m venv sklearn-env
 
 **3. Activate the virtual environment**:
 
-&nbsp;&nbsp;Linux / Mac:
-&nbsp;&nbsp;```
+&nbsp;&nbsp;&nbsp;&nbsp;Linux / Mac:
+```
 source sklearn-env/bin/activate
-&nbsp;&nbsp;```
+```
 
-&nbsp;&nbsp;Windows (PowerShell):
-&nbsp;&nbsp;```
+&nbsp;&nbsp;&nbsp;&nbsp;Windows (PowerShell):
+```
 sklearn-env\Scripts\Activate.ps1
-&nbsp;&nbsp;```
+```
 
 **4. Install required packages**:
 ```
