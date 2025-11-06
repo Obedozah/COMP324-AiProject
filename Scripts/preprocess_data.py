@@ -9,23 +9,30 @@ def preprocess_data(dataset_path, fit_scaler=None, fit_columns=None):
         arff_file = arff.load(f)
     df = pd.DataFrame(arff_file['data'], columns=[attr[0] for attr in arff_file['attributes']])
 
-    # Encode categorical columns
-    obj_cols = df.select_dtypes(include=['object']).columns
-    df_encoded = pd.get_dummies(df, columns=obj_cols)
+    # Separate features and target
+    X = df.iloc[:, :-1]
+    Y = df.iloc[:, -1]
 
-    # Align test columns to training columns
+    # Encode categorical columns: Change words to numbers
+    obj_cols = X.select_dtypes(include=['object']).columns
+    X_encoded = pd.get_dummies(X, columns=obj_cols)
+
+    # Align test columns to column amount from training
     if fit_columns is not None:
-        df_encoded = df_encoded.reindex(columns=fit_columns, fill_value=0)
+        X_encoded = X_encoded.reindex(columns=fit_columns, fill_value=0)
 
-    # Scale features
+    # Scale features with the scaler from training
     if fit_scaler is None:
         scaler = StandardScaler()
-        df_scaled = scaler.fit_transform(df_encoded)
+        X_scaled = scaler.fit_transform(X_encoded)
     else:
-        df_scaled = fit_scaler.transform(df_encoded)
+        X_scaled = fit_scaler.transform(X_encoded)
         scaler = fit_scaler
 
-    # Fix target column (last column)
-    df_scaled[:, -1] = np.where(np.isclose(df_scaled[:, -1], 0.93442518), 0, 1)
+    # convert Y to 0 or 1
+    Y = np.where(Y == 'normal', 0, 1) if Y.dtype == object else Y
 
-    return df_scaled, scaler, df_encoded.columns
+    # Combine X and Y
+    df_scaled = np.column_stack((X_scaled, Y))
+
+    return df_scaled, scaler, X_encoded.columns
