@@ -13,16 +13,26 @@ def preprocess_data(dataset_path, fit_scaler=None, fit_columns=None):
     obj_cols = df.select_dtypes(include=['object']).columns
     df_encoded = pd.get_dummies(df, columns=obj_cols)
 
+    print(df.tail())
+    print(df.select_dtypes(include=['object']).tail())
+    print(df_encoded.tail())
+
     # Align test columns to training columns
     if fit_columns is not None:
         df_encoded = df_encoded.reindex(columns=fit_columns, fill_value=0)
+        #print("FIT COL\n",df_encoded.head())
+    #print("NOT FIT COL\n",df_encoded.head())
 
     # Scale features
     if fit_scaler is None:
         scaler = StandardScaler()
         df_scaled = scaler.fit_transform(df_encoded)
+        print("NONE:\n")
+        print(df_scaled)
     else:
         df_scaled = fit_scaler.transform(df_encoded)
+        print("SOME:\n")
+        print(df_scaled)
         scaler = fit_scaler
 
     # Fix target column (last column)
