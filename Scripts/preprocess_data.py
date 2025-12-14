@@ -13,17 +13,7 @@ def preprocess_data(dataset_path, fit_scaler=None, fit_columns=None):
     X = df.iloc[:, :-1]
     Y = df.iloc[:, -1]
 
-<<<<<<< HEAD
-    print(df.tail())
-    print(df.select_dtypes(include=['object']).tail())
-    print(df_encoded.tail())
-
-    # Align test columns to training columns
-    if fit_columns is not None:
-        df_encoded = df_encoded.reindex(columns=fit_columns, fill_value=0)
-        #print("FIT COL\n",df_encoded.head())
-    #print("NOT FIT COL\n",df_encoded.head())
-=======
+    print(df.head())
     # Encode categorical columns: Change words to numbers
     obj_cols = X.select_dtypes(include=['object']).columns
     X_encoded = pd.get_dummies(X, columns=obj_cols)
@@ -31,24 +21,13 @@ def preprocess_data(dataset_path, fit_scaler=None, fit_columns=None):
     # Align test columns to column amount from training
     if fit_columns is not None:
         X_encoded = X_encoded.reindex(columns=fit_columns, fill_value=0)
->>>>>>> 20982a58bda30b22b853733b4e83fcfa61272089
 
     # Scale features with the scaler from training
     if fit_scaler is None:
         scaler = StandardScaler()
-<<<<<<< HEAD
-        df_scaled = scaler.fit_transform(df_encoded)
-        print("NONE:\n")
-        print(df_scaled)
-    else:
-        df_scaled = fit_scaler.transform(df_encoded)
-        print("SOME:\n")
-        print(df_scaled)
-=======
         X_scaled = scaler.fit_transform(X_encoded)
     else:
         X_scaled = fit_scaler.transform(X_encoded)
->>>>>>> 20982a58bda30b22b853733b4e83fcfa61272089
         scaler = fit_scaler
 
     # convert Y to 0 or 1
