@@ -3,7 +3,7 @@ import joblib
 import numpy as np
 from sklearn.metrics import accuracy_score, classification_report
 
-clf = joblib.load('models/random_forest_model.joblib')
+clf = joblib.load('models/svm_model.joblib')
 scaler = joblib.load('models/scaler.joblib')
 columns = joblib.load('models/columns.joblib')
 
